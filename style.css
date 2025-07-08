@@ -1,0 +1,367 @@
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #10b981;
+  --secondary-hover: #059669;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --bg-color: #f9fafb;
+  --surface-color: #ffffff;
+  --border-color: #e5e7eb;
+  --danger-color: #ef4444;
+  --font-family: 'Heebo', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+.main-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.logo h1 {
+  font-size: 2.25rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.logo span {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.main-header p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Output & Placeholder */
+#outputContainer {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  padding: 2rem;
+  min-height: 200px;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #9ca3af;
+  height: 100%;
+}
+
+.placeholder svg {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+/* Controls inside output */
+.print-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.print-controls button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.print-controls button:hover {
+  transform: translateY(-2px);
+}
+
+.print-controls .print-btn {
+  background-color: #3b82f6;
+}
+.print-controls .print-btn:hover {
+  background-color: #2563eb;
+}
+
+.print-controls .admin-btn {
+  background-color: #f97316;
+}
+.print-controls .admin-btn:hover {
+  background-color: #ea580c;
+}
+
+/* Order Header */
+.order-header {
+  margin-bottom: 2rem;
+}
+
+.order-header h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.order-header-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.order-header-item strong {
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.order-header-item span {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+thead th {
+  background-color: #f9fafb;
+  padding: 1rem;
+  text-align: right;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-bottom: 2px solid var(--border-color);
+}
+
+td {
+  padding: 1rem;
+  text-align: right;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.category-header th {
+  background-color: #f3f4f6;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.subcategory-header th {
+  background-color: #f9fafb;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  padding-right: 2rem;
+}
+
+.product-row:hover td {
+  background-color: #f9fafb;
+}
+
+.quantity-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.cut-row td {
+  background-color: #fee2e2 !important;
+}
+
+.station-manager-btn {
+    background-color: #e5e7eb;
+    color: #374151;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.station-manager-btn:hover {
+    background-color: #d1d5db;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s;
+}
+
+.modal.is-visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: var(--surface-color);
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Print */
+@media print {
+    .product-image img {
+    display: block !important;
+    visibility: visible !important;
+    width: 50px !important; /* Set a fixed width */
+    height: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  thead {
+    display: table-header-group !important; /* Repeat table head on each page */
+  }
+  body {
+    padding: 0;
+    background-color: #fff;
+  }
+  .container {
+      padding: 0;
+      max-width: 100%;
+  }
+  .main-header, .print-controls, .station-manager-btn {
+    display: none;
+  }
+  #outputContainer {
+    box-shadow: none;
+    padding: 0;
+  }
+  table {
+    font-size: 9pt;
+  }
+  th, td {
+    padding: 5px;
+  }
+  .product-image {
+    display: none;
+  }
+  .cut-row td {
+      background-color: #f0f0f0 !important; /* Lighter grey for B&W printers */
+      -webkit-print-color-adjust: exact; 
+      print-color-adjust: exact;
+  }
+}
