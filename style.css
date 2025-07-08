@@ -252,6 +252,19 @@ td {
     background-color: #d1d5db;
 }
 
+/* Loader Styles */
+.loader {
+    padding: 20px;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 20px;
+}
+
 /* Modal */
 .modal {
   display: none; /* Hidden by default */

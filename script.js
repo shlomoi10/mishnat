@@ -6,18 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pasteBtn.addEventListener('click', handlePaste);
 
+    // Check for 'paste' query parameter on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('paste')) {
+        handlePaste();
+    }
+
     async function handlePaste() {
         try {
             const jsonText = await navigator.clipboard.readText();
             const apiData = JSON.parse(jsonText);
-            renderOrder(apiData);
+            await renderOrder(apiData); // Ensure we wait for the entire process
         } catch (err) {
             showModal('שגיאה', 'ההדבקה נכשלה. אנא ודא שהעתקת קובץ JSON תקין.');
             console.error("Error processing pasted data:", err);
         }
     }
 
-    function renderOrder(apiData) {
+    async function renderOrder(apiData) {
         const contentHtml = createPrintContent(apiData);
         outputContainer.innerHTML = contentHtml;
         addEventListeners(apiData);
